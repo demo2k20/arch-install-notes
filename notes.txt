@@ -23,7 +23,7 @@ mkfs.ext4 /dev/sdx2
 mkswap /dev/sdx3 # Only if you created a swap partition
 swapon /dev/sdx3 # Only if you created a swap partition
 
-# Mount the paritions
+# Mount the partitions
 mount /dev/sdx2 /mnt
 mkdir /mnt/boot # UEFI ONLY!!!
 mount /dev/sdx1 /mnt/boot # UEFI ONLY!!!
