@@ -31,7 +31,7 @@ mount /dev/sdx1 /mnt/boot # UEFI ONLY!!!
 # Update the pacman mirror list (technically optional, though it saves time)
 reflector --verbose --latest 5 --sort rate --save /etc/pacman.d/mirrorlist
 
-# Install the base system, nvim and networkmanager
+# Install the base system, neovim and networkmanager
 # intel-ucode should be swapped for amd-ucode for amd cpus
 pacstrap /mnt base base-devel linux linux-firmware neovim networkmanager intel-ucode
 
@@ -47,7 +47,7 @@ ln -sf /usr/share/zoneinfo/Europe/Bucharest /etc/localtime
 hwclock --systohc
 
 # Set up the system locale
-# Uncomment "en_US.UTF-8 UTF-8" for english
+# Uncomment "en_US.UTF-8 UTF-8" for English
 nvim /etc/locale.gen
 locale-gen
 
@@ -59,21 +59,21 @@ echo "LANG=en_US.UTF-8" > /etc/locale.conf
 echo "KEYMAP=hu" > /etc/vconsole.conf
 
 # Set the system hostname
-# Change *myhostname* to the actual desired hostname
+# Change *myhostname* to the desired hostname
 echo "*myhostname*" > /etc/hostname
 nvim /etc/hosts
 127.0.0.1   localhost
-::1     localhost
-127.0.1.1	*myhostname*.localdomain	*myhostname*
+::1         localhost
+127.0.1.1   *myhostname*.localdomain	*myhostname*
 
 # Enable networkmanager
 systemctl enable NetworkManager
 
-# Set the root account's passoword
+# Set the root account's password
 passwd
 
 # Add a normal user
-# Change *myusername* to the actual desired username
+# Change *myusername* to the desired username
 useradd -mG wheel,users,audio,video,optical,storage,power,rfkill *myusername*
 
 # Set the regular user's password
