@@ -4,7 +4,7 @@ loadkeys hu
 # Set up wifi if necessary (ethernet works by default)
 wifi-menu
 ping archlinux.org
- 
+
 # Update the system clock
 timedatectl set-ntp true
 timedatectl status
@@ -72,7 +72,7 @@ systemctl enable NetworkManager
 # Set the root account's password
 passwd
 
-# Add a normal user
+# Create a regular user
 # Change *myusername* to the desired username
 useradd -mG wheel,users,audio,video,optical,storage,power,rfkill *myusername*
 
@@ -82,6 +82,10 @@ passwd *myusername*
 # Enable sudo permissions for all the users in the %wheel group
 # by uncommenting the desired %wheel privilige (sudo with/without a password)
 EDITOR=nvim visudo
+
+# Alternatively, my dotfiles symlink sudo to doas in the current user's zshrc
+# Edit /etc/doas.conf and write 'permit nopass :wheel' to give everyone in the wheel group super user access
+nvim /etc/doas.conf
 
 # Installing the GRUB bootloader
 # LEGACY SYSTEMS:
