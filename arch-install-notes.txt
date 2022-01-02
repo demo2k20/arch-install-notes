@@ -83,10 +83,6 @@ passwd *myusername*
 # by uncommenting the desired %wheel privilige (sudo with/without a password)
 EDITOR=nvim visudo
 
-# Alternatively, my dotfiles symlink sudo to doas in the current user's zshrc
-# Edit /etc/doas.conf and write 'permit nopass :wheel' to give everyone in the wheel group super user access
-nvim /etc/doas.conf
-
 # Installing the GRUB bootloader
 # LEGACY SYSTEMS:
 pacman -S grub
