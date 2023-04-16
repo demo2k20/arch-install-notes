@@ -57,6 +57,7 @@ echo "LANG=en_US.UTF-8" > /etc/locale.conf
 # Set up the permanent virtual console (tty) keyboard layout
 # Standard Hungarian in my case
 echo "KEYMAP=hu" > /etc/vconsole.conf
+echo "FONT=ter-120n" >> /etc/vconsole.conf
 
 # Set the system hostname
 # Change *myhostname* to the desired hostname
